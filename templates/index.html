@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body>
+
+
+    <!-------------------start navbar---------------------->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename = 'images/logo.png')}}" alt="logo">
+        </div>
+        <div class="menu">
+            <ul>
+                <li> <a href="{{ url_for('home') }}"> World </a></li>
+                <li> <a href="{{ url_for('maroc') }}"> Morocco </a></li>
+                <li> <a href="{{ url_for('protect') }}"> Protect Yourself </a></li>
+            </ul>
+        </div>
+    </nav>
+    <!------x------------end navbar--------------x------->
+    
+    <!-------------------start slide---------------------->
+    <div class="slide">
+        <marquee>
+            <p>
+                {% for temp in data %} 
+
+                    {{temp.country}}: {{temp.confirmed}} ||
+                                    
+                {% endfor %}
+            </p>
+        </marquee>
+    </div>
+    <!-------------------end slide---------------------->
+
+    <!------------------- start boxes ---------------------->
+    <div class="boxes">
+        <div class="box1">
+            <div class="one">
+                <h5>Total Confirmed</h5>
+                <h1>1,987,322</h1>
+            </div>
+            <div class="two">
+            	<table border="1" class="table-responsive-sm">
+                    <thead>
+                        <tr>
+                            <th class="columns" scope="col">Country</th>
+                            <th class="columns" scope="col">Confirmed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pair in pairs%}
+                            <tr>
+                                <td class="columns">{{pair[0]}}</td>
+                                <td class="columns">{{pair[1]}}</td>
+                            </tr>
+                        {% endfor %}
+            
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="box2 box">
+
+        	{{wMap | safe }}
+            
+        </div>
+        <div class="box3 box">
+
+                    <div class="home">
+                        <div class="content">
+                            <h1>covid-19 tracking made easy</h1>
+                            <form method="POST">    
+                                <select name="country">
+                                    <option value="" disabled selected hidden>Select a Country</option>
+					                <option>Afghanistan</option>
+					                <option>Albania</option>
+					                <option>Algeria</option>
+					                <option>Andorra</option>
+					                <option>Angola</option>
+					                <option>Anguilla</option>
+					                <option>Antigua and Barbuda</option>
+					                <option>Argentina</option>
+					                <option>Armenia</option>
+					                <option>Aruba</option>
+					                <option>Australia</option>
+					                <option>Austria</option>
+					                <option>Azerbaijan</option>
+					                <option>Bahamas</option>
+					                <option>Bahrain</option>
+					                <option>Bangladesh</option>
+					                <option>Barbados</option>
+					                <option>Belarus</option>
+					                <option>Belgium</option>
+					                <option>Belize</option>
+					                <option>Benin</option>
+					                <option>Bermuda</option>
+					                <option>Bhutan</option>
+					                <option>Bolivia</option>
+					                <option>Botswana</option>
+					                <option>Brazil</option>
+					                <option>British Virgin Islands</option>
+					                <option>Brunei</option>
+					                <option>Bulgaria</option>
+					                <option>Burundi</option>
+					                <option>Cambodia</option>
+					                <option>Cameroon</option>
+					                <option>Canada</option>
+					                <option>CAR</option>
+					                <option>Caribbean Netherlands</option>
+					                <option>Cayman Islands</option>
+					                <option>Chad</option>
+					                <option>Channel Islands</option>
+					                <option>Chile</option>
+					                <option>China</option>
+					                <option>Colombia</option>
+					                <option>Comoros</option>
+					                <option>Croatia</option>
+					                <option>Cuba</option>
+					                <option>Curaçao</option>
+					                <option>Cyprus</option>
+					                <option>Czechia</option>
+					                <option>Denmark</option>
+					                <option>Djibouti</option>
+					                <option>Dominica</option>
+					                <option>DRC</option>
+					                <option>Ecuador</option>
+					                <option>Egypt</option>
+					                <option>Eritrea</option>
+					                <option>Estonia</option>
+					                <option>Eswatini</option>
+					                <option>Ethiopia</option>
+					                <option>Faeroe Islands</option>
+					                <option>Falkland Islands</option>
+					                <option>Fiji</option>
+					                <option>Finland</option>
+					                <option>France</option>
+					                <option>French Polynesia</option>
+					                <option>Gabon</option>
+					                <option>Gambia</option>
+					                <option>Georgia</option>
+					                <option>Germany</option>
+					                <option>Ghana</option>
+					                <option>Gibraltar</option>
+					                <option>Greece</option>
+					                <option>Greenland</option>
+					                <option>Grenada</option>
+					                <option>Guadeloupe</option>
+					                <option>Guatemala</option>
+					                <option>Guinea</option>
+					                <option>Guyana</option>
+					                <option>Haiti</option>
+					                <option>Honduras</option>
+					                <option>Hungary</option>
+					                <option>Iceland</option>
+					                <option>India</option>
+					                <option>Indonesia</option>
+					                <option>Iran</option>
+					                <option>Iraq</option>
+					                <option>Ireland</option>
+					                <option>Isle of Man</option>
+					                <option>Israel</option>
+					                <option>Italy</option>
+					                <option>Jamaica</option>
+					                <option>Japan</option>
+					                <option>Jordan</option>
+					                <option>Kazakhstan</option>
+					                <option>Kenya</option>
+					                <option>Kuwait</option>
+					                <option>Kyrgyzstan</option>
+					                <option>Laos</option>
+					                <option>Latvia</option>
+					                <option>Lebanon</option>
+					                <option>Lesotho</option>
+					                <option>Liberia</option>
+					                <option>Libya</option>
+					                <option>Liechtenstein</option>
+					                <option>Lithuania</option>
+					                <option>Luxembourg</option>
+					                <option>Macao</option>
+					                <option>Madagascar</option>
+					                <option>Malawi</option>
+					                <option>Malaysia</option>
+					                <option>Maldives</option>
+					                <option>Mali</option>
+					                <option>Malta</option>
+					                <option>Martinique</option>
+					                <option>Mauritania</option>
+					                <option>Mauritius</option>
+					                <option>Mayotte</option>
+					                <option>Mexico</option>
+					                <option>Moldova</option>
+					                <option>Monaco</option>
+					                <option>Mongolia</option>
+					                <option>Montenegro</option>
+					                <option>Montserrat</option>
+					                <option>Morocco</option>
+					                <option>Mozambique</option>
+					                <option>MS Zaandam</option>
+					                <option>Myanmar</option>
+					                <option>Namibia</option>
+					                <option>Nepal</option>
+					                <option>Netherlands</option>
+					                <option>Nicaragua</option>
+					                <option>Niger</option>
+					                <option>Nigeria</option>
+					                <option>Norway</option>
+					                <option>Oman</option>
+					                <option>Pakistan</option>
+					                <option>Palestine</option>
+					                <option>Panama</option>
+					                <option>Papua New Guinea</option>
+					                <option>Paraguay</option>
+					                <option>Peru</option>
+					                <option>Philippines</option>
+					                <option>Poland</option>
+					                <option>Portugal</option>
+					                <option>Qatar</option>
+					                <option>Réunion</option>
+					                <option>Romania</option>
+					                <option>Russia</option>
+					                <option>Rwanda</option>
+					                <option>Saint Kitts and Nevis</option>
+					                <option>Saint Lucia</option>
+					                <option>Saint Martin</option>
+					                <option>Saint Pierre Miquelon</option>
+					                <option>Senegal</option>
+					                <option>Serbia</option>
+					                <option>Seychelles</option>
+					                <option>Singapore</option>
+					                <option>Sint Maarten</option>
+					                <option>Slovakia</option>
+					                <option>Slovenia</option>
+					                <option>Somalia</option>
+					                <option>Spain</option>
+					                <option>St. Barth</option>
+					                <option>St. Vincent Grenadines</option>
+					                <option>Sudan</option>
+					                <option>Suriname</option>
+					                <option>Sweden</option>
+					                <option>Switzerland</option>
+					                <option>Syria</option>
+					                <option>Taiwan</option>
+					                <option>Tajikistan</option>
+					                <option>Tanzania</option>
+					                <option>Thailand</option>
+					                <option>Timor-Leste</option>
+					                <option>Togo</option>
+					                <option>Trinidad and Tobago</option>
+					                <option>Tunisia</option>
+					                <option>Turkey</option>
+					                <option>UAE</option>
+					                <option>Uganda</option>
+					                <option>UK</option>
+					                <option>Ukraine</option>
+					                <option>Uruguay</option>
+					                <option>USA</option>
+					                <option>Uzbekistan</option>
+					                <option>Venezuela</option>
+					                <option>Vietnam</option>
+					                <option>Yemen</option>
+					                <option>Zambia</option>
+					                <option>Zimbabwe</option>
+                                </select>
+                                <button>Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!------start small boxes------>
+                    <div class="all">
+                        <h1><i class="fas fa-map-marker-alt"></i>  {{covid.country}}</h1>
+                        <div class="smallBoxes">
+                            <div class="boxx">
+                                <h4>Cases</h4>
+                                <p>{{covid.confirmed}}</p>
+                            </div>
+                            <div class="boxx">
+                                <h4>Critical</h4>
+                                <p>{{covid.critical}}</p>
+                            </div>
+                            <div class="boxx">
+                                <h4>Deaths</h4>
+                                <p>{{covid.deaths}}</p>
+                            </div>
+                        </div>
+                        <div class="smallBoxes">
+                            <div class="boxx">
+                                <h4>Today added cases</h4>
+                                <p>{{covid.todayCases}}</p>
+                            </div>
+                            <div class="boxx">
+                                <h4>Today deaths</h4>
+                                <p>{{covid.todayDeaths}}</p>
+                            </div>
+                            <div class="boxx">
+                                <h4>Active cases</h4>
+                                <p>{{covid.active}}</p>
+                            </div>
+                        </div>
+                        <div class="smallBoxes">
+                            <div class="boxx">
+                                <h4>Total tests</h4>
+                                <p>{{covid.totalTests}}</p>
+                            </div>
+                            <div class="boxx">
+                                <h4>Recovered</h4>
+                                <p>{{covid.recovered}}</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!---x---end boxes---x--->
+        </div>
+    </div>
+    <!------------------- end boxes ---------------------->
+
+    <!------------------- start footer ---------------------->
+    <div class="footer">
+        <p>© 2020 Johns Hopkins University. All rights reserved.</p>
+    </div>
+    <!------------------- end footer ---------------------->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+</body>
+</html>

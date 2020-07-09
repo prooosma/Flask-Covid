@@ -1,0 +1,226 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #000000;
+}
+/*----------------start navbar---------------------*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #002D72;
+
+}
+nav .logo{
+    width: 170px;
+    cursor: pointer;
+    
+}
+nav .logo img{
+    width: 100%;
+}
+
+nav .menu ul {
+    list-style: none;
+}
+
+nav .menu ul li{
+    padding: 0 20px;
+    display: inline-block;     
+}
+
+nav .menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    transition: color .5s;
+}
+nav .menu ul li a:hover{
+    color: #ffd000;
+}
+
+/*-----x----------end navbar--------------x------*/
+
+/*----------------start slide---------------------*/
+.slide{
+    width: 100%;
+    height: 50px;
+    background-color: #222222;
+    line-height: 50px;
+    margin-top: 10px;
+    border-top: 1px solid #383838 ;
+    border-bottom: 1px solid #383838 ;
+    color: #BDBDBD;
+    
+}
+/*----------------end slide---------------------*/
+
+
+/*----------------start boxes---------------------*/
+.boxes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boxes .box1{
+    width: 20%;
+}
+.boxes .box1 .one{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    border: 1px solid #383838 ; 
+    background-color: #222222;
+    text-align: center;
+    padding: 5px;
+}
+
+.boxes .box1 .one h5{
+    color: #fff;
+    opacity: 0.8;
+}
+
+.boxes .box1 .one h1{
+    color: #E60000;
+}
+.boxes .box1 .two{
+    width: 100%;
+    height: 330px;
+    border: 1px solid #383838 ;
+    background-color: #222222;
+}
+
+.boxes .box2{
+    width: 39%;
+    margin: O 10px;
+}
+.boxes .box3{
+    width: 39%;
+    padding: 10px;
+}
+.boxes .box{
+    background-color: #222222;
+    height: 400px;
+    border: 1px solid #383838 ;
+}
+/*----------------end boxes---------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------start box3---------------------*/
+
+.home{
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+.home .content{
+    text-align: center;
+}
+
+.home .content h1{
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.home .content select{
+    width: 300px;
+    height: 38px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.home .content input::placeholder{
+    opacity: 0.3;
+}
+
+.home .content button{
+    width: 150px;
+    height: 38px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ffd000;
+    color: #fff;
+}
+/*-----start boxes--------*/
+
+.all{
+    padding: 10px;
+}
+.all h1{
+    text-align: left;
+    color: #ffd000;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.all .smallBoxes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.all .smallBoxes .boxx{
+    flex: 1;
+    border: 1px solid #5C5C5C;
+    color: #fff;
+    margin: 0 5px;
+    text-align: center;
+    padding: 10px;
+}
+.all .smallBoxes .boxx h4{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 12px;
+    
+}
+
+.all .smallBoxes .boxx p{
+    font-size: 20px;
+}
+
+/*--x---end boxes----x----*/
+
+/*-----x----------end box3--------------x------*/
+
+/*----------------start footer---------------------*/
+.footer{
+    width: 100%;
+    height: 60px;
+    background-color: #002D72;
+    color: #fff;
+    text-align: center;
+    line-height: 60px ;
+    
+}
+.footer p{
+    opacity: .7;
+}
+/*-------x----------end footer----------------x------*/
